@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzz</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="default.css">
+</head>
+<body>
+    <div class="main">
+        <section>
+                <h1>Animal Lover ?</h1>
+                <div class="hidden">
+                    <p>Difficulty : <span id="difficulty">Level</span></p>
+                    <p>You have <span id="time">02:00</span> minutes !</p>
+                 </div>
+                <form method="post" action="traitement.php">
+                    <fieldset>
+                        <legend>Choose the difficulty bellow and go to the test !</legend>
+                                <div>
+                                    <input type="radio" id="diff_easy" name="difficulty" value="easy" >
+                                    <label for="diff_easy">Easy</label>
+                                    <input type="radio" id="diff_medium" name="difficulty" value="medium">
+                                    <label for="diff_medium">Medium</label>
+                                    <input type="radio" id="diff_hard" name="difficulty" value="hard">
+                                    <label for="diff_hard">Hard</label>
+                                </div>
+                                <input type="button" value="Go to the test !" class="btn btn-start" disabled>
+                                <div class="alert alert-danger hidden" role="alert">
+                                    Oops! We have a problem, please retry later.
+                                 </div>
+                    </fieldset>
+                    <div id="questions"></div>
+                </form>
+                <div id="result" class="hidden" role="alert">
+                    <p>Here's your score : <span></span></p>
+                </div>
+                <div id="timeout" class="hidden" role="alert">
+                    <p>It is too late !</p>
+                </div>
+
+        </section>
+    </div>
+    <script src="script.js"></script>
+  <!--
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel" src="script.js"></script>
+-->
+</body>
+</html>
