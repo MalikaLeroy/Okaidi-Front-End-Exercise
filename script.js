@@ -102,12 +102,27 @@ function appendData(data) {
     questionsContainer.querySelectorAll('.btn-next').forEach(item => {
         item.addEventListener('click', event => {
             counterStep++
+            /*
             if (counterStep < data.length) {
                 item.closest("fieldset").classList.add("hidden")
                 item.closest("fieldset").nextSibling.classList.remove("hidden")
             } else if (counterStep == data.length) {
                 item.value = "Submit this Quiz"
             } else {
+                item.closest("fieldset").classList.add("hidden")
+                resultElement.classList.remove("hidden")
+                stopTimer()
+            }*/
+
+            if (counterStep == data.length-1) {
+                let lastButton = item.closest("fieldset").nextSibling.querySelector(".btn-next")
+                console.log(lastButton)
+                lastButton.value = "Submit this Quiz"
+            }
+            if (counterStep < data.length) {
+                item.closest("fieldset").classList.add("hidden")
+                item.closest("fieldset").nextSibling.classList.remove("hidden")
+            } else{
                 item.closest("fieldset").classList.add("hidden")
                 resultElement.classList.remove("hidden")
                 stopTimer()
